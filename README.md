@@ -1,2 +1,2 @@
-# university_portal
-A portal using flask 
+# UIT PORTAL
+A university portal using flask 
