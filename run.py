@@ -1,10 +1,7 @@
-from flask import Flask
+from portal import app
 
 print("hello world")
 
-app=Flask(__name__)
-app.config['SECRET_KEY'] = "c96418b075871ec41adaea54fee6f4ac"
-
-
-app.run(debug=True)
+if __name__=="__main__":
+    app.run(debug=True)
 
