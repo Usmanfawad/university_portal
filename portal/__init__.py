@@ -7,6 +7,7 @@ import os
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "c96418b075871ec41adaea54fee6f4ac"
+app.config['STUDENT_DATA']="D:/University/uit_portal/portal/static/"
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///portal.db'
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)

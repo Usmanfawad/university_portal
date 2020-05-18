@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>{{ title }}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+  </head>
+  <body>
+
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar">
+				<div class="custom-menu">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	        </button>
+        </div>
+	  		<div class="img bg-wrap text-center py-4" style="background-image: url(https://photo-cdn.urdupoint.com/media/2019/06/_3/730x425/pic_1561539874.jpg);">
+	  			<div class="user-logo">
+	  				<div class="img" style="background-image: url(https://f0.pngfuel.com/png/507/702/profile-icon-png-clip-art.png);"></div>
+	  				<h3>Student</h3>
+	  			</div>
+	  		</div>
+        <ul class="list-unstyled components mb-5">
+
+<!--            For displaying error and success flash messages        -->
+
+            {% with messages = get_flashed_messages(with_categories=true)%}
+                {% if messages %}
+                        {% for category,message in messages %}
+                            <div class="alert alert-{{ category }}">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+<!--            Block tabs; to include navbar tabs.-->
+            {% block tabs%}
+            {% endblock %}
+        </ul>
+
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5 pt-5">
+        {% block content %}
+
+        {% endblock %}
+      </div>
+		</div>
+
+    <script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/popper.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/main.js')}}"></script>
+    {% block scripts %}
+
+    {% endblock %}
+  </body>
+</html>

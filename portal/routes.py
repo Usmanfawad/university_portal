@@ -1,8 +1,9 @@
 from portal import app
-from flask import render_template,url_for,flash,redirect,request,abort,jsonify
+from flask import render_template,url_for,flash,redirect,request,abort,jsonify,send_from_directory
 from flask_login import login_user,current_user,logout_user,login_required
 from portal.forms import *
 from functools import wraps
+from flask import send_file
 
 from portal import app,db,bcrypt,login_manager
 
@@ -41,7 +42,7 @@ def unauthorized():
 def login():
     if current_user.is_authenticated:
         if current_user.role == 'ADMIN':
-            return redirect(url_for('admin_material_dashboard'))
+            return redirect(url_for('admin_dashboard'))
         elif current_user.role == 'USER_DEPART_MANAGER':
             return redirect(url_for('userManager'))
         elif current_user.role == 'USER_DEPART_USER':
@@ -76,5 +77,8 @@ def login():
 
 
 @app.route('/admin/dashboard',methods=['GET','POST'])
+@login_required(role="ADMIN")
 def admin_dashboard():
-    return "<h1>< Admin </h1>"
+    title="Admin dasboard"
+    return render_template("admin_dashboard.html" ,title=title)
+

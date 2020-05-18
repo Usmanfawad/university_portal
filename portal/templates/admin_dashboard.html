@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% block tabs%}
+    <li>
+        <a href="attendance.html"><span class="fa fa-check mr-3 "></span>Attendance Details</a>
+    </li>
+    <li>
+        <a href="sessional.html"><span class="fa fa-book mr-3"></span>Sessional Details</a>
+    </li>
+    <li class="active">
+        <a href="academic.html"><span class="fa fa-folder-open mr-3"></span>Academic Details</a>
+    </li>
+    <li>
+        <a href="personal.html"><span class="fa fa-user mr-3 "></span>Personal Details</a>
+    </li>
+    <li>
+        <a href="settings.html"><span class="fa fa-cog mr-3"></span>Profile Settings</a>
+    </li>
+    <li>
+        <a href="password.html"><span class="fa fa-question-circle mr-3"></span>Change Password</a>
+    </li>
+    <li>
+        <a href="C:\Users\pc\Desktop\project2\Login\index.html"><span class="fa fa-sign-out mr-3"></span>Log Out</a>
+    </li>
+{% endblock %}
+
+
+{% block content %}
+        <h2 class="mb-4">Academic Details</h2>
+        <br><br><h3 style="background-color: #014e96;color: white;text-align: center;">OFFICIAL ACADEMIC DOCUMENTS</h3>
+        <p> Academic Rules & Regulations <a href="https://www.uit.edu/academic-rules-regulations" target="_blank"> Visit</a></p>
+        <p> Academic Calendar <a href="http://www.uit.edu/AcademicCalendar.pdf" target="_blank"> Visit</a></p>
+        <p> Student Handbook <a href="http://www.uit.edu/Student_booklet.pdf" target="_blank"> Visit</a></p>
+        <p> Time Table <a href="http://www.uit.edu/timetable" target="_blank"> Visit</a></p>
+        <p> Datesheet End Term Examination <a href="http://www.uit.edu/ExamSheet.pdf" target="_blank"> Visit</a></p>
+{% endblock %}

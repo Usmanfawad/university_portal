@@ -20,34 +20,41 @@
 					<div class="row login-row">
 						<div class="col-md-12 login-col">
 					<span class="login100-form-logo">
-						<img src="https://www.uit.edu/assets/images/newUITLogo47.png" alt="" height="105px">
+						<img src="https://www.uit.edu/assets/images/newUITLogo47.png" alt="" height="105px" >
 					</span>
 
 					<br><br><span class="login100-form-title p-b-20 p-t-27">
 						Student Portal Login
 					</span><br><br>
+							<div class="wrap-input100 validate-input" data-validate = "Enter email">
 							{% if form.email.errors %}
-								{{ form.email(class="form-control form-control-lg is-invalid",placeholder="Email") }}
+								{{ form.email(class="input100 form-control-lg is-invalid",placeholder="Email") }}
+								<span class="focus-input100" data-placeholder="&#xf207;"></span>
 								<div class="invalid-feedback">
 									{% for error in form.email.errors%}
 										<span> {{ error }}</span>
 									{% endfor %}
 								</div>
 							{% else %}
-								{{ form.email(class="form-control form-control-lg",placeholder="Email") }}
+								{{ form.email(class="input100",placeholder="Email") }}
+								<span class="focus-input100" data-placeholder="&#xf207;"></span>
 							{% endif %}
+							</div>
 
-
+							<div class="wrap-input100 validate-input" data-validate = "Enter password">
 							{% if form.password.errors %}
-								{{ form.password(class="form-control form-control-lg is-invalid",placeholder="Password") }}
+								{{ form.password(class="input100 form-control-lg is-invalid",placeholder="Password") }}
+								<span class="focus-input100" data-placeholder="&#xf191;"></span>
 								<div class="invalid-feedback">
 									{% for error in form.password.errors%}
 										<span> {{ error }}</span>
 									{% endfor %}
 								</div>
 							{% else %}
-								{{ form.password(class="form-control form-control-lg",placeholder="Password") }}
+								{{ form.password(class="input100",placeholder="Password") }}
+								<span class="focus-input100" data-placeholder="&#xf191;"></span>
 							{% endif %}
+							</div>
 						</div>
 		​               <div class="form-check">
 							{{ form.remember(class="form-check-input") }}
